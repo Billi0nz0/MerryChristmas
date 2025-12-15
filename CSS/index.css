@@ -1,0 +1,184 @@
+body {
+    font-family: "Space Grotesk",sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url(../Assets/Gold\ Classy\ Elegant\ Luxury\ Business\ Christmas\ Card.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+.main-header {
+    background-color: transparent;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 20px;
+}
+
+.logo p {
+    color: #0A3D2E;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: #0A3D2E;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    background-color: #8B0000;
+    color: #ffffff;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    padding: 50px 20px; 
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #0A3D2E;
+}
+
+.hero span {
+    color: #8B0000;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.hero button {
+    background-color: #0A3D2E;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+    background-color: #8B0000;
+}
+
+em {
+    color: grey;
+    font-size: 1rem;
+}
+
+.hero img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+hr {
+    width: 70%;
+    border: none;
+    border-top: 1.5px solid #0A3D2E;
+}
+
+.socials {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.socials p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.socials a {
+    color: #0A3D2E;
+    margin: 0 10px;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socials a:hover {
+    transform: scale(1.1);
+    color: #8B0000;
+}
+
+footer {
+    background-color: #0a3d2ea5;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(69, 66, 66, 0.838);
+}
+
+.popup-content {
+    position: relative;
+    background-color: transparent;
+    margin: 13% auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+}
+
+.close {
+    position:absolute;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 10px;
+}
