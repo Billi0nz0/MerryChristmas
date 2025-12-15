@@ -35,9 +35,10 @@
     <section>
         <div class="hero">
             <h1> JAM THIS MUSIC 🎶 </h1>
-            <audio src="Assets/Jingle bells.mp3" type="audio/mpeg" id="bgMusic"></audio>
             <img src="Assets/500x500.jpg" alt="music cover">
-            <button id="musicBtn">▶ Play</button>
+            <audio id="test" src="Assets/Jingle bells.mp3"></audio>
+            <button onclick="document.getElementById('test').play()">▶ Play</button>
+            <button onclick="document.getElementById('test').pause()">⏸ Pause</button>
             <p> <em> (credits: Yxngsux · IsholaBeatz · Odyssybeatz) </em> </p>
         </div>
     </section>
@@ -69,7 +70,7 @@
 
 <script src="Javascript/greetings.js"></script>
 <script src="Javascript/Christmas.js"></script>
-<script src="Javascript/music.js"></script>
+<script src="Javascript/music.js" defer></script>
 <script src="Javascript/footerdate.js"></script>
 </body>
 </html>
