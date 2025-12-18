@@ -4,6 +4,7 @@
     <meta charset="UTF8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
     <link rel="stylesheet" href="CSS/index.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <title> Simple Christmas Checker </title>
@@ -24,7 +25,8 @@
 
     <section>
         <div class="hero">
-            <h1> <span id="greetings"></span> Compliments 🎄 </h1>
+            <h1> <span id="welcomeBack"></span></h1>
+            <h2> <span id="greetings"></span> Compliments 🎄 </h2>
             <p> Welcome to Billi0nz Christmas Checker! This simple tool helps you determine if today is Christmas Day or not. <br> Just click the button below to find out!</p>
             <button id="checkButton"> CHECK </button>
             <p> <em> (something special on Christmas Day!) </em> </p>
@@ -57,6 +59,17 @@
         <div class="popup-content">
             <span id="closepopup" class="close">&times;</span>
             <img id="popupImage" src="Assets/Cream Red Green Illustrative Corporate Christmas Card.png" alt="Christmascard" />
+        </div>
+    </div>
+
+    <div class="username" id="namepopUp">
+        <div class="namepopup-content">
+            <span id="name-closepopup" class="nameclose">&times;</span>
+            <form class="usernameForm">
+                <label> Enter Username </label>
+                <input type="text" placeholder="Username" id="usernameInput">
+                <button id="usernameBtn"> Save </button>
+            </form>
         </div>
     </div>
 

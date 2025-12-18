@@ -13,7 +13,6 @@ body {
     background-color: transparent;
     padding: 20px;
     gap: 20px;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +60,8 @@ nav a:hover {
     justify-content: center;
     gap: 20px;
     text-align: center;
-    padding: 50px 20px; 
+    padding: 10px 50px;
+    text-align: center;
 }
 
 .hero h1 {
@@ -181,4 +181,84 @@ footer {
 .popup-content img {
     width: 100%;
     border-radius: 10px;
+}
+
+.username {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(69, 66, 66, 0.838);
+}
+
+.namepopup-content {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin: 13% auto;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    max-width: 400px;
+    background-color: #f0f0f0;
+    background-image: url(../Assets/Gold\ Classy\ Elegant\ Luxury\ Business\ Christmas\ Card.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.nameclose{
+    position:relative;
+    left: 290px;
+    top: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.usernameForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color:#0A3D2E;
+}
+
+.usernameForm input{
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: "Space Grotesk",sans-serif;
+    font-size: 0.9rem;
+}
+
+.usernameForm button {
+    background-color: #0A3D2E;
+    color: #ffffff;
+    border: none;
+    padding: 10px 13px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.usernameForm button:hover {
+    transform: scaleX(1.1);
+    transition: 0.3s;
+    background-color: #8B0000;
+}
+
+@media (max-width: 720px) {
+    .hero p {
+       font-size: 1.2rem; 
+    }
 }
