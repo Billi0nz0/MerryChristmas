@@ -35,10 +35,9 @@
     <section>
         <div class="hero">
             <h1> JAM THIS MUSIC 🎶 </h1>
-            <img src="Assets/500x500.jpg" alt="music cover">
+            <img src="Assets/500x500.jpg" loading="lazy" alt="music cover">
             <audio id="test" src="Assets/Jingle bells.mp3"></audio>
-            <button onclick="document.getElementById('test').play()">▶ Play</button>
-            <button onclick="document.getElementById('test').pause()">⏸ Pause</button>
+            <button id="musicBtn"> ▶ Play </button>
             <p> <em> (credits: Yxngsux · IsholaBeatz · Odyssybeatz) </em> </p>
         </div>
     </section>
@@ -68,9 +67,9 @@
     <p> (C) <span id="yearspan"></span> Billi0nz Group. All rights reserved!</p>
 </footer>
 
+<script src="Javascript/music.js"></script>
 <script src="Javascript/greetings.js"></script>
 <script src="Javascript/Christmas.js"></script>
-<script src="Javascript/music.js" defer></script>
 <script src="Javascript/footerdate.js"></script>
 </body>
 </html>

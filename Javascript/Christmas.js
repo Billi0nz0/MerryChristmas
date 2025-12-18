@@ -1,7 +1,5 @@
 const christmas = new Date ("2025-12-25");
 
-
-
 const popup = document.getElementById("popUp")
 const popupImage = document.getElementById("popupImage")
 const closeBtn = document.getElementById("closepopup")
