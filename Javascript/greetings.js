@@ -33,7 +33,7 @@ const TimeDate = () => {
     const day = now.getDate();
     const year = now.getFullYear();
 
-    return `${month} ${day}, ${year}`;
+    return `${month} ${day}, ${year}.`;
 }
 
 const TodayDate = document.getElementById("todayDate");
