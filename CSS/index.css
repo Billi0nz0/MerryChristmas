@@ -1,6 +1,6 @@
-/* -------------------------------------------------------------
-   1. GLOBAL STYLES & DESIGN SYSTEM
-------------------------------------------------------------- */
+/* ==========================================================================
+   1. GLOBAL STYLES & CUSTOM PROPERTIES (DESIGN SYSTEM)
+   ========================================================================== */
 :root {
     /* Color Palette */
     --primary: #0A3D2E;
@@ -35,9 +35,9 @@ body {
     line-height: 1.6;
 }
 
-/* -------------------------------------------------------------
+/* ==========================================================================
    2. HEADER & NAVIGATION
-------------------------------------------------------------- */
+   ========================================================================== */
 .main-header {
     display: flex;
     flex-wrap: wrap;
@@ -88,26 +88,45 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* -------------------------------------------------------------
-   3. HERO SECTION
-------------------------------------------------------------- */
+/* ==========================================================================
+   3. HERO SECTIONS & CONTENT
+   ========================================================================== */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: clamp(40px, 8vh, 100px) max(20px, 5vw);
-    max-width: 850px;
+    padding: clamp(30px, 6vh, 80px) max(20px, 5vw);
+    max-width: 800px;
     margin: 0 auto;
-    gap: 24px;
+    gap: 20px;
+}
+
+/* Typography Fluidity */
+.hero h3 {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 6px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(4px);
 }
 
 .hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.2rem);
     color: var(--primary);
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* Custom styling target for your Pacifico font greetings */
+.hero h2 {
+    font-family: 'Pacifico', cursive, sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    color: var(--accent);
+    font-weight: 400;
 }
 
 .hero span {
@@ -115,19 +134,21 @@ nav a:hover {
 }
 
 .hero p {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: var(--text-muted);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-dark);
     font-weight: 400;
-    max-width: 650px;
+    max-width: 600px;
 }
 
+/* Shared Interactive Button Layout */
 .hero button {
     background-color: var(--primary);
     color: var(--white);
     border: none;
-    padding: 14px 32px;
+    padding: 14px 36px;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 1px;
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: var(--transition);
@@ -140,18 +161,40 @@ nav a:hover {
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
 }
 
+/* Targeted Circular Style for the Play/Pause Button */
+#musicBtn {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+}
+
+#musicBtn i {
+    transform: translateX(2px); /* Centers play icon optically */
+}
+
 em {
     color: var(--primary);
     font-weight: 600;
+    font-style: italic;
+    font-size: 0.95rem;
 }
 
+/* Music Album Art Cover Visual */
 .hero img {
     width: 100%;
-    max-width: 280px;
+    max-width: 240px;
     height: auto;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
-    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.hero img:hover {
+    transform: scale(1.02) rotate(1deg);
 }
 
 hr {
@@ -163,25 +206,36 @@ hr {
     margin: 40px auto;
 }
 
-/* -------------------------------------------------------------
+/* ==========================================================================
    4. SOCIALS & FOOTER
-------------------------------------------------------------- */
+   ========================================================================== */
 .socials {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding: 0 20px;
 }
 
 .socials p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.social-icons {
+    margin-top: 16px;
+}
+
+.social-icons p {
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 12px;
 }
 
 .socials a {
     color: var(--primary);
-    margin: 0 12px;
+    margin: 0 10px;
     font-size: 1.8rem;
     text-decoration: none;
     display: inline-block;
@@ -195,36 +249,47 @@ hr {
 
 footer {
     background-color: rgba(var(--primary-rgb), 0.85);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     text-align: center;
-    padding: 20px;
+    padding: 24px 20px;
     color: var(--white);
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-/* -------------------------------------------------------------
-   5. POPUPS & MODALS (FIXED POSITIONS)
-------------------------------------------------------------- */
+footer p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   5. MODALS & POPUPS (GRID PLACEMENT WITH BLUR)
+   ========================================================================== */
 .popup, .username {
-    display: none; /* Controlled by JS toggle */
+    display: none; /* Keep hidden until JavaScript toggles inline layout styling */
     position: fixed;
-    inset: 0; /* Modern shortcut for top/bottom/left/right: 0 */
+    inset: 0; 
     z-index: 1000;
     background-color: var(--overlay);
-    backdrop-filter: blur(5px);
-    place-items: center; /* Centers items instantly if using display: grid */
+    backdrop-filter: blur(6px);
 }
 
-/* Use this fallback class if your JS injects display: block instead of grid */
-.popup.active, .username.active {
-    display: grid; 
+/* 💡 JavaScript Note: If your JS scripts turn these containers visible, 
+   set elements to container style "display: grid" instead of "block" to auto-center them perfectly. */
+.popup[style*="display: block"], 
+.username[style*="display: block"] {
+    display: grid !important;
+    place-items: center;
 }
 
+/* Image Greeting Card Modal Container */
 .popup-content {
     position: relative;
     width: 90%;
     max-width: 420px;
-    padding: 16px;
+    padding: 10px;
     background: transparent;
 }
 
@@ -232,14 +297,14 @@ footer {
     width: 100%;
     height: auto;
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .close {
     position: absolute;
-    top: -40px;
+    top: -45px;
     right: 10px;
-    font-size: 32px;
+    font-size: 36px;
     color: var(--white);
     cursor: pointer;
     transition: var(--transition);
@@ -249,7 +314,7 @@ footer {
     color: var(--accent);
 }
 
-/* Name Form Popup */
+/* User Registration Modal Form */
 .namepopup-content {
     position: relative;
     width: 90%;
@@ -257,18 +322,15 @@ footer {
     padding: 40px 30px;
     border-radius: var(--radius-lg);
     background: var(--bg-light) url('../Assets/Gold Classy Elegant Luxury Business Christmas Card.jpg') no-repeat center / cover;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
-/* Modern styling for forms inside overlay */
 .usernameForm {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 16px;
+    align-items: stretch; /* Forces input & button to stretch naturally */
 }
 
 .usernameForm label {
@@ -276,16 +338,17 @@ footer {
     font-weight: 700;
     color: var(--primary);
     text-align: center;
+    margin-bottom: 4px;
 }
 
 .usernameForm input {
     width: 100%;
     padding: 14px 16px;
-    border: 2px solid rgba(var(--primary-rgb), 0.15);
+    border: 2px solid rgba(var(--primary-rgb), 0.2);
     border-radius: var(--radius-md);
     font-family: inherit;
     font-size: 1rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     transition: var(--transition);
 }
 
@@ -305,6 +368,7 @@ footer {
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: var(--transition);
+    letter-spacing: 0.5px;
 }
 
 .usernameForm button:hover {
@@ -314,9 +378,9 @@ footer {
 
 .nameclose {
     position: absolute;
-    top: 16px;
+    top: 12px;
     right: 20px;
-    font-size: 28px;
+    font-size: 32px;
     cursor: pointer;
     color: var(--primary);
     transition: var(--transition);
@@ -326,19 +390,23 @@ footer {
     color: var(--accent);
 }
 
-/* -------------------------------------------------------------
-   6. RESPONSIVE BREAKPOINTS
-------------------------------------------------------------- */
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column;
         text-align: center;
-        padding: 20px;
+        padding: 20px 16px;
     }
     
     nav {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+    }
+    
+    .hero {
+        padding: 40px 20px;
     }
 }
