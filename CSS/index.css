@@ -1,264 +1,344 @@
-body {
-    font-family: "Space Grotesk",sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    background-image: url(../Assets/Gold\ Classy\ Elegant\ Luxury\ Business\ Christmas\ Card.jpg);
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
+/* -------------------------------------------------------------
+   1. GLOBAL STYLES & DESIGN SYSTEM
+------------------------------------------------------------- */
+:root {
+    /* Color Palette */
+    --primary: #0A3D2E;
+    --primary-rgb: 10, 61, 46;
+    --accent: #8B0000;
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --text-muted: #495057;
+    --white: #ffffff;
+    --overlay: rgba(33, 37, 41, 0.85);
+    
+    /* Layout Tokens */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background: var(--bg-light) url('../Assets/Gold Classy Elegant Luxury Business Christmas Card.jpg') no-repeat center / cover fixed;
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------
+   2. HEADER & NAVIGATION
+------------------------------------------------------------- */
 .main-header {
-    background-color: transparent;
-    padding: 20px;
-    gap: 20px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    padding: 24px max(5vw, 20px);
+    background: transparent;
+    gap: 20px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 12px;
 }
 
 .logo img {
-    height: 60px;
+    height: 50px;
     width: auto;
-    border-radius: 20px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
 }
 
 .logo p {
-    color: #0A3D2E;
-    font-size: 24px;
-    font-weight: 600;
-    margin-left: 10px;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 12px;
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-    padding: 10px 15px;
-    background-color: #0A3D2E;
-    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
 }
 
 nav a:hover {
-    background-color: #8B0000;
-    color: #ffffff;
+    background-color: var(--accent);
+    transform: translateY(-2px);
 }
 
+/* -------------------------------------------------------------
+   3. HERO SECTION
+------------------------------------------------------------- */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     text-align: center;
-    padding: 10px 50px;
-    text-align: center;
+    padding: clamp(40px, 8vh, 100px) max(20px, 5vw);
+    max-width: 850px;
+    margin: 0 auto;
+    gap: 24px;
 }
 
 .hero h1 {
-    font-size: 36px;
-    color: #0A3D2E;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--primary);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero span {
-    color: #8B0000;
-    font-weight: 700;
+    color: var(--accent);
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 20px 0;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    max-width: 650px;
 }
 
 .hero button {
-    background-color: #0A3D2E;
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--white);
     border: none;
-    padding: 15px 20px;
+    padding: 14px 32px;
     font-size: 1.1rem;
-    border-radius: 10px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.2);
 }
 
 .hero button:hover {
-    transform: scale(1.05);
-    background-color: #8B0000;
+    transform: translateY(-3px);
+    background-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
 }
 
 em {
-    color: #0A3D2E;
-    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .hero img {
-    width: 200px;
+    width: 100%;
+    max-width: 280px;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    margin-top: 20px;
 }
 
 hr {
-    width: 70%;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
     border: none;
-    border-top: 1.5px solid #0A3D2E;
+    border-radius: 2px;
+    margin: 40px auto;
 }
 
+/* -------------------------------------------------------------
+   4. SOCIALS & FOOTER
+------------------------------------------------------------- */
 .socials {
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .socials p {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .socials a {
-    color: #0A3D2E;
-    margin: 0 10px;
-    font-size: 2rem;
+    color: var(--primary);
+    margin: 0 12px;
+    font-size: 1.8rem;
     text-decoration: none;
-    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+    transition: var(--transition);
 }
 
 .socials a:hover {
-    transform: scale(1.1);
-    color: #8B0000;
+    transform: translateY(-4px);
+    color: var(--accent);
 }
 
 footer {
-    background-color: #0a3d2ea5;
+    background-color: rgba(var(--primary-rgb), 0.85);
+    backdrop-filter: blur(8px);
     text-align: center;
-    padding: 10px;
-    width: 100%;
-    color: white;
-    margin-top: 20px;
+    padding: 20px;
+    color: var(--white);
+    font-weight: 500;
 }
 
-.popup {
-    display: none;
+/* -------------------------------------------------------------
+   5. POPUPS & MODALS (FIXED POSITIONS)
+------------------------------------------------------------- */
+.popup, .username {
+    display: none; /* Controlled by JS toggle */
     position: fixed;
+    inset: 0; /* Modern shortcut for top/bottom/left/right: 0 */
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(69, 66, 66, 0.838);
+    background-color: var(--overlay);
+    backdrop-filter: blur(5px);
+    place-items: center; /* Centers items instantly if using display: grid */
+}
+
+/* Use this fallback class if your JS injects display: block instead of grid */
+.popup.active, .username.active {
+    display: grid; 
 }
 
 .popup-content {
     position: relative;
-    background-color: transparent;
-    margin: 13% auto;
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-}
-
-.close {
-    position:absolute;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
+    width: 90%;
+    max-width: 420px;
+    padding: 16px;
+    background: transparent;
 }
 
 .popup-content img {
     width: 100%;
-    border-radius: 10px;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
 }
 
-.username {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(69, 66, 66, 0.838);
-}
-
-.namepopup-content {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    margin: 13% auto;
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%;
-    height: 50%;
-    max-width: 400px;
-    background-color: #f0f0f0;
-    background-image: url(../Assets/Gold\ Classy\ Elegant\ Luxury\ Business\ Christmas\ Card.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.nameclose{
-    position:relative;
-    left: 290px;
-    top: 0;
-    font-size: 30px;
+.close {
+    position: absolute;
+    top: -40px;
+    right: 10px;
+    font-size: 32px;
+    color: var(--white);
     cursor: pointer;
+    transition: var(--transition);
 }
 
-.usernameForm {
+.close:hover {
+    color: var(--accent);
+}
+
+/* Name Form Popup */
+.namepopup-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-light) url('../Assets/Gold Classy Elegant Luxury Business Christmas Card.jpg') no-repeat center / cover;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
 }
 
-label {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color:#0A3D2E;
+/* Modern styling for forms inside overlay */
+.usernameForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
 }
 
-.usernameForm input{
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-family: "Space Grotesk",sans-serif;
-    font-size: 0.9rem;
+.usernameForm label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+}
+
+.usernameForm input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(var(--primary-rgb), 0.15);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: var(--transition);
+}
+
+.usernameForm input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(var(--primary-rgb), 0.1);
 }
 
 .usernameForm button {
-    background-color: #0A3D2E;
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--white);
     border: none;
-    padding: 10px 13px;
+    padding: 14px;
     font-size: 1.1rem;
-    border-radius: 10px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
     cursor: pointer;
+    transition: var(--transition);
 }
 
 .usernameForm button:hover {
-    transform: scaleX(1.1);
-    transition: 0.3s;
-    background-color: #8B0000;
+    background-color: var(--accent);
+    transform: translateY(-1px);
 }
 
-@media (max-width: 720px) {
-    .hero p {
-       font-size: 1.2rem; 
+.nameclose {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.nameclose:hover {
+    color: var(--accent);
+}
+
+/* -------------------------------------------------------------
+   6. RESPONSIVE BREAKPOINTS
+------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
